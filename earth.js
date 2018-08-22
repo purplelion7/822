@@ -33,10 +33,6 @@
 	sphere.rotation.y = rotation; 
 	scene.add(sphere)
 
-    var clouds = createClouds(radius, segments);
-	clouds.rotation.y = rotation;
-	scene.add(clouds)
-
 	var stars = createStars(90, 64);
 	scene.add(stars);
 
@@ -49,7 +45,6 @@
 	function render() {
 		controls.update();
 		sphere.rotation.y += 0.0005;
-		clouds.rotation.y += 0.0005;		
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
 	}
@@ -58,9 +53,6 @@
 		return new THREE.Mesh(
 			new THREE.SphereGeometry(radius, segments, segments),
 			new THREE.MeshPhongMaterial({
-				map:         THREE.ImageUtils.loadTexture('images/2_no_clouds_4k.jpg'),
-				bumpMap:     THREE.ImageUtils.loadTexture('images/elev_bump_4k.jpg'),
-				bumpScale:   0.005,
 				specularMap: THREE.ImageUtils.loadTexture('images/water_4k.png'),
 				specular:    new THREE.Color('grey')								
 			})
