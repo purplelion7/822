@@ -32,6 +32,10 @@
     var sphere = createSphere(radius, segments);
 	sphere.rotation.y = rotation; 
 	scene.add(sphere)
+	
+	var clouds = createClouds(radius, segments);
+	clouds.rotation.y = rotation;
+	scene.add(clouds)
 
 	var stars = createStars(90, 64);
 	scene.add(stars);
