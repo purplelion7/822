@@ -51,9 +51,9 @@
 
 	function createSphere(radius, segments) {
 		return new THREE.Mesh(
-			map:         THREE.ImageUtils.loadTexture('images/2_no_clouds_4k.jpg'),
 			new THREE.SphereGeometry(radius, segments, segments),
 			new THREE.MeshPhongMaterial({
+				map:         THREE.ImageUtils.loadTexture('images/2_no_clouds_4k.jpg'),
 				specularMap: THREE.ImageUtils.loadTexture('images/water_4k.png'),
 				specular:    new THREE.Color('grey')								
 			})
